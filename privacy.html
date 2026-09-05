@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité — ORYNALI Automation</title>
+<meta name="description" content="Politique de confidentialité d'ORYNALI Automation : autorisations Google utilisées, données traitées, stockage local et services tiers.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">ORYNALI Automation</a>
+    <nav class="site">
+      <a href="index.html">Accueil</a>
+      <a href="privacy.html" aria-current="page">Confidentialité</a>
+      <a href="terms.html">Conditions d'utilisation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Politique de confidentialité</h1>
+    <p class="lede">
+      ORYNALI Automation est un outil réservé à l'exploitant pour gérer ses
+      propres chaînes YouTube ORYNALI et NUOMELO. Il n'est proposé à
+      personne d'autre. Il traite néanmoins certaines données provenant
+      d'autres personnes que l'exploitant — notamment les commentaires
+      publiés par le public sous les vidéos — comme détaillé plus bas.
+    </p>
+
+    <h2>Qui exploite l'outil</h2>
+    <p>
+      L'outil est exploité par le propriétaire des chaînes YouTube ORYNALI
+      et NUOMELO, joignable à
+      <a href="mailto:orynali.media@gmail.com">orynali.media@gmail.com</a>.
+      Il ne s'agit pas d'une société ni d'un service proposé au public.
+    </p>
+
+    <h2>Comment l'outil fonctionne</h2>
+    <p>
+      ORYNALI Automation est auto-hébergé : il s'exécute sur mon propre
+      ordinateur, pas sur un serveur partagé accessible à d'autres
+      utilisateurs. Il n'y a ni compte, ni inscription, ni base de données
+      centrale gérée par un tiers pour le compte de plusieurs personnes.
+    </p>
+
+    <h2>Autorisations Google demandées</h2>
+    <p>
+      L'outil se connecte à l'API YouTube Data avec une autorisation OAuth
+      Google distincte par chaîne, portant uniquement sur les chaînes que je
+      possède ou gère moi-même — jamais sur le compte d'une autre personne.
+      La chaîne <strong>ORYNALI</strong> est connectée ; la connexion de la
+      chaîne <strong>NUOMELO</strong> est en préparation et utilisera une
+      autorisation séparée. Les autorisations (« scopes ») demandées sont :
+    </p>
+    <dl class="scope-list">
+      <dt><code>youtube</code> et <code>youtube.upload</code></dt>
+      <dd>Gérer et mettre en ligne des vidéos sur la chaîne concernée.</dd>
+
+      <dt><code>youtube.readonly</code></dt>
+      <dd>Lire les informations publiques et privées de la chaîne
+        (vidéos, playlists, métadonnées).</dd>
+
+      <dt><code>yt-analytics.readonly</code></dt>
+      <dd>Lire les statistiques de la chaîne (vues, rétention, audience)
+        pour évaluer les vidéos déjà publiées.</dd>
+
+      <dt><code>youtube.force-ssl</code></dt>
+      <dd>Lire les commentaires. Publier une réponse nécessite en plus une
+        ré-autorisation Google séparée pour ce scope. Au sein de l'outil,
+        chaque brouillon de réponse reste ensuite soumis à une validation
+        manuelle avant envoi — cette relecture est une étape interne à
+        l'outil, distincte de l'autorisation Google elle-même.</dd>
+    </dl>
+    <p>
+      Aucune de ces autorisations n'est utilisée pour agir sur un compte ou
+      une chaîne qui ne m'appartient pas.
+    </p>
+
+    <h2>Données utilisées</h2>
+    <p>Selon les fonctions activées, l'outil traite :</p>
+    <ul>
+      <li>les métadonnées de mes vidéos et de ma chaîne (titres,
+        descriptions, miniatures, statut de confidentialité) ;</li>
+      <li>les statistiques d'audience de mes vidéos (vues, rétention,
+        clics) ;</li>
+      <li>les commentaires publiés par le public sous mes vidéos — donc par
+        des personnes autres que moi : leur texte, leur auteur et leurs
+        métadonnées publiques, récupérés via l'API YouTube ;</li>
+      <li>les scripts, fichiers audio, visuels et vidéos que l'outil génère
+        pour produire mes propres vidéos.</li>
+    </ul>
+    <p>
+      Les commentaires récupérés sont classés (thème, sentiment, question)
+      et utilisés pour proposer des brouillons de réponse. L'outil ne
+      supprime ni ne masque aucun commentaire ; toute action de modération
+      reste dans YouTube Studio.
+    </p>
+
+    <h2>Où sont stockées les données</h2>
+    <p>
+      Toutes les données ci-dessus sont stockées <strong>localement</strong>,
+      sur l'ordinateur qui fait tourner l'outil : dans une base de données
+      SQLite locale et dans des fichiers locaux (scripts, audio, sous-titres,
+      vidéos, miniatures). Il n'existe pas de base de données hébergée par
+      ORYNALI Automation qui centraliserait ces informations en dehors de
+      cet ordinateur.
+    </p>
+    <p>
+      Cela ne concerne que ce stockage local. Les données envoyées à l'API
+      YouTube/Google (section précédente) ou à un fournisseur d'IA tiers
+      (section suivante) leur sont transmises séparément et relèvent de
+      leurs propres règles de conservation, distinctes de ce stockage local.
+    </p>
+
+    <h2>Services tiers utilisés pour générer du contenu</h2>
+    <p>
+      Certaines fonctions de production s'appuient sur des services tiers,
+      activés uniquement si je configure moi-même une clé d'accès à ce
+      service. Quand un de ces services est utilisé, le texte, l'audio ou
+      l'image nécessaire à la génération lui est transmis, selon la
+      politique de confidentialité propre à ce service :
+    </p>
+    <ul>
+      <li>génération de texte : Google Gemini, OpenAI, OpenRouter, Kimi
+        (Moonshot AI), MiMo (Xiaomi) ou GLM (Zhipu AI) ;</li>
+      <li>génération de voix : Google Gemini TTS, OpenAI TTS, ElevenLabs ou
+        Azure Speech Services ;</li>
+      <li>génération d'images ou de vidéo : Google Gemini, Replicate
+        (Seedance), MiniMax, Kling ou Alibaba Wan (DashScope).</li>
+    </ul>
+    <p>
+      Certaines fonctions équivalentes tournent entièrement en local, sur
+      mon propre matériel, sans envoi à un service tiers (génération vidéo
+      locale, voix de synthèse locale) — dans ce cas, aucune donnée ne
+      quitte l'ordinateur pour cette étape.
+    </p>
+
+    <h2>Télémétrie</h2>
+    <p>
+      L'outil intègre une télémétrie anonyme optionnelle, désactivée par
+      défaut. Elle ne peut s'activer que si je le configure explicitement.
+      Lorsqu'elle est active, elle envoie uniquement des jalons d'usage
+      (nom du jalon, horodatage, version de l'outil, plateforme, identifiant
+      d'installation aléatoire) — jamais le nom d'une chaîne, un titre, un
+      sujet, une clé ou un fichier.
+    </p>
+
+    <h2>Cookies et traceurs</h2>
+    <p>
+      Ce site (les pages que vous consultez actuellement) ne dépose aucun
+      cookie, aucun traceur, ne charge aucun script tiers et ne contient
+      aucun formulaire de collecte de données.
+    </p>
+
+    <h2>Conservation et suppression des données</h2>
+    <p>
+      Les copies locales (base de données et fichiers de l'outil) restent
+      sur mon ordinateur ; je peux les supprimer à tout moment en effaçant
+      ces fichiers. Cette suppression locale n'efface pas d'éventuelles
+      copies déjà conservées ailleurs : les données envoyées à l'API
+      YouTube/Google, ou à un fournisseur d'IA tiers lors d'une génération
+      passée, restent soumises à la politique de conservation propre à ce
+      service et ne sont pas supprimées par l'effacement des fichiers
+      locaux. Pour les données détenues par Google (comme l'historique des
+      vidéos publiées), voir la
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politique de confidentialité de Google</a> ;
+      pour un fournisseur d'IA, voir la politique de confidentialité de ce
+      service.
+    </p>
+
+    <h2>Révoquer l'accès</h2>
+    <p>
+      L'autorisation Google donnée à ORYNALI Automation peut être révoquée à
+      tout moment depuis le compte Google concerné : Sécurité → Accès de
+      tiers à votre compte, ou directement sur
+      <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+      ORYNALI et NUOMELO utilisant le même compte Google et la même
+      application OAuth, il n'est pas vérifié si cette page permet de
+      révoquer l'accès à une seule chaîne indépendamment de l'autre, ou aux
+      deux à la fois — à vérifier directement sur cette page avant de s'y
+      fier.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Pour toute question sur cette politique :
+      <a href="mailto:orynali.media@gmail.com">orynali.media@gmail.com</a>
+    </p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="privacy.html">Confidentialité</a>
+      <a href="terms.html">Conditions d'utilisation</a>
+    </nav>
+    <p class="updated">Dernière mise à jour : 4 septembre 2026.</p>
+  </div>
+</footer>
+</body>
+</html>
